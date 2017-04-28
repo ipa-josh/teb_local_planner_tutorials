@@ -8,18 +8,18 @@ TebLocalPlannerROS:
  dt_ref: 0.3
  dt_hysteresis: 0.1
  global_plan_overwrite_orientation: True
- allow_init_with_backwards_motion: False
+ allow_init_with_backwards_motion: True
  max_global_plan_lookahead_dist: 3.0
  feasibility_check_no_poses: 5
     
  # Robot
          
  max_vel_x: 0.4
- max_vel_x_backwards: 0.2
+ max_vel_x_backwards: 0.4
  max_vel_y: 0.0
- max_vel_theta: 0.3
+ max_vel_theta: 0.6
  acc_lim_x: 0.5
- acc_lim_theta: 0.5
+ acc_lim_theta: 0.7
  min_turning_radius: 0.0 # diff-drive robot (can turn on place!)
 
  footprint_model:
@@ -28,13 +28,13 @@ TebLocalPlannerROS:
  # GoalTolerance
     
  xy_goal_tolerance: 0.2
- yaw_goal_tolerance: 0.1
- free_goal_vel: False
+ yaw_goal_tolerance: 0.3
+ free_goal_vel: True
     
  # Obstacles
     
- min_obstacle_dist: 0.25 # This value must also include our robot radius, since footprint_model is set to "point".
- include_costmap_obstacles: True
+ min_obstacle_dist: 0.2 # This value must also include our robot radius, since footprint_model is set to "point".
+ include_costmap_obstacles: False
  costmap_obstacles_behind_robot_dist: 1.5
  obstacle_poses_affected: 30
  costmap_converter_plugin: ""
@@ -48,17 +48,17 @@ TebLocalPlannerROS:
  optimization_activate: True
  optimization_verbose: False
  penalty_epsilon: 0.1
- weight_max_vel_x: 2
- weight_max_vel_theta: 1
- weight_acc_lim_x: 1
- weight_acc_lim_theta: 1
+ weight_max_vel_x: 0.5
+ weight_max_vel_theta: 5
+ weight_acc_lim_x: 0.5
+ weight_acc_lim_theta: 5
  weight_kinematics_nh: 1000
- weight_kinematics_forward_drive: 1
- weight_kinematics_turning_radius: 1
+ weight_kinematics_forward_drive: 100
+ weight_kinematics_turning_radius: 0.1
  weight_optimaltime: 1
- weight_obstacle: 50
+ weight_obstacle: 40
  weight_dynamic_obstacle: 10 # not in use yet
- weight_adapt_factor: 2
+ weight_adapt_factor: 1.5
 
  # Homotopy Class Planner
 

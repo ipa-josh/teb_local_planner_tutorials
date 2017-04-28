@@ -4,6 +4,9 @@ global_costmap:
   update_frequency: 1.0
   publish_frequency: 0.5
   static_map: true
+  resolution: 0.1
+  
+  inflation_radius: 0.18
  
   transform_tolerance: 0.5
   plugins:
