@@ -10,7 +10,7 @@ TebLocalPlannerROS:
  global_plan_overwrite_orientation: True
  allow_init_with_backwards_motion: True
  max_global_plan_lookahead_dist: 3.0
- feasibility_check_no_poses: 5
+ feasibility_check_no_poses: 0
     
  # Robot
          
@@ -27,7 +27,7 @@ TebLocalPlannerROS:
 
  # GoalTolerance
     
- xy_goal_tolerance: 0.2
+ xy_goal_tolerance: 0.075
  yaw_goal_tolerance: 0.3
  free_goal_vel: True
     
@@ -40,6 +40,7 @@ TebLocalPlannerROS:
  costmap_converter_plugin: ""
  costmap_converter_spin_thread: True
  costmap_converter_rate: 5
+ inflation_dist: 0.1
 
  # Optimization
     
